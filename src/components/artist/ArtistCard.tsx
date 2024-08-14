@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Artist } from "../config/site";
+import { Artist } from "../../config/site";
 
 export default function ArtistCard({ artist }: { artist: Artist }) {
     return (

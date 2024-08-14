@@ -3,6 +3,7 @@ import Header from "../../components/elements/Header";
 import { Artist } from "../../config/site";
 import ArtistList from "./list";
 import Button from "../../components/elements/Button";
+import Loading from "../../components/elements/Loading";
 
 const fetchArtists = async () => {
     const res = await fetch("https://music.ssingh.net/artist?format=json&all=true");
@@ -67,7 +68,7 @@ export default function Artists() {
     return (
         <>
             {header}
-            <h1>Loading...</h1>
+            <Loading />
         </>
     );
 }

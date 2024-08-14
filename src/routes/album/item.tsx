@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Album } from "../../config/site";
 import AlbumForm from "../../components/album/AlbumForm";
 import Header from "../../components/elements/Header";
+import Loading from "../../components/elements/Loading";
 
 export default function AlbumPage() {
     const [albums, setAlbums] = useState<Album[] | null>(null);
@@ -45,5 +46,5 @@ export default function AlbumPage() {
         }
         return (<>{header} Album Not Found</>);
     }
-    return (<>{header}Loading...</>);
+    return (<>{header}<Loading /></>);
 }

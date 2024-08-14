@@ -1,6 +1,8 @@
 import { googleLogout } from "@react-oauth/google";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Button from "./Button";
+import SidebarElement from "./SidebarElement";
 
 export default function Sidebar() {
     const location = useLocation();
@@ -23,7 +25,7 @@ export default function Sidebar() {
                     <path d="M2 6.32001H22" stroke="#f0f0f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </button>
-            <aside className={"bg-black fixed top-0 left-0 w-80 h-screen transition ease-linear duration-150 md:opacity-100 " + (open ? "opacity-100 z-10" : "opacity-0 z-0")}>
+            <aside className={"bg-black fixed top-0 left-0 w-80 h-screen transition ease-linear duration-150 md:opacity-100 md:visible " + (open ? "opacity-100 visible z-10" : "opacity-0 invisible z-0")}>
                 <div className="h-full text-right p-6 pl-0">
                     <h1 className="text-primary text-2xl font-semibold pt-5">
                         <Link to="/">
@@ -31,36 +33,28 @@ export default function Sidebar() {
                         </Link>
                     </h1>
                     <ul className="text-off-white uppercase font-light text-lg">
-                        <li className="my-16">
-                            <Link to="/album">
-                                Albums
-                                <span className={
-                                    "ml-6 py-2 px-[0.1rem] rounded-sm h-full " +
-                                    (location.pathname.includes("album") ? "bg-primary" : "bg-white")
-                                }></span>
-                            </Link>
-
-                        </li>
-                        <li className="my-16">
-                            <Link to="/artist">
-                                Artists
-                                <span className={
-                                    "ml-6 py-2 px-[0.1rem] rounded-sm h-full " +
-                                    (location.pathname.includes("artist") ? "bg-primary" : "bg-white")
-                                }></span>
-                            </Link>
-                        </li>
-                        <li className="my-16">
-                            <Link to="/tag">
-                                Tags
-                                <span className={
-                                    "ml-6 py-2 px-[0.1rem] rounded-sm h-full " +
-                                    (location.pathname.includes("tag") ? "bg-primary" : "bg-white")
-                                }></span>
-                            </Link>
-                        </li>
+                        <SidebarElement
+                            link="/album"
+                            content="Albums"
+                            active={location.pathname.includes("album")}
+                        />
+                        <SidebarElement
+                            link="/artist"
+                            content="Artists"
+                            active={location.pathname.includes("artist")}
+                        />
+                        <SidebarElement
+                            link="/tag"
+                            content="Tags"
+                            active={location.pathname.includes("tag")}
+                        />
                     </ul>
-                    <button onClick={logout} className="font-light text-md text-primary fixed bottom-10 left-[15rem]">Logout</button>
+                    <Button
+                        onClick={logout}
+                        type="secondary"
+                        content="Logout"
+                        className="fixed bottom-10 left-[14rem]"
+                    />
                 </div>
             </aside>
         </>

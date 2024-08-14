@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Tag } from "../../config/site";
 import TagForm from "../../components/tag/TagForm";
 import Header from "../../components/elements/Header";
+import Loading from "../../components/elements/Loading";
 
 export default function TagPage() {
     const [tags, setTags] = useState<Tag[] | null>(null);
@@ -45,5 +46,5 @@ export default function TagPage() {
         }
         return (<>{header} Tag Not Found</>);
     }
-    return (<>{header}Loading...</>);
+    return (<>{header}<Loading /></>);
 }

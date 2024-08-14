@@ -1,5 +1,5 @@
-import { Album, Artist } from '../config/site';
 import { Link } from "react-router-dom";
+import { Album, Artist } from "../../config/site";
 
 export default function AlbumCard({ album }: { album: Album }) {
     const artists = album.artists?.map((artist: Artist) =>
@@ -12,7 +12,7 @@ export default function AlbumCard({ album }: { album: Album }) {
 
     return (
         <Link to={`/album/${album.id}`} className={"my-3 md:m-4"}>
-            <div className={"bg-white h-full text-center drop-shadow-xl rounded-xl pb-4"}>
+            <div className={"bg-white h-full text-center drop-shadow-xl rounded-xl pb-4 transition-all"}>
                 <div className={"aspect-square bg-black border-b-4 border-primary rounded-t-xl"}>
                     <img src={album.image} alt={`${album.name} Cover`} className={"h-full w-full rounded-t-xl"} />
                 </div>

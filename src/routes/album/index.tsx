@@ -4,6 +4,7 @@ import Header from "../../components/elements/Header";
 
 import AlbumList from "./list";
 import Button from "../../components/elements/Button";
+import Loading from "../../components/elements/Loading";
 
 const fetchAlbums = async () => {
     const res = await fetch("https://music.ssingh.net/album/?format=json&all=true");
@@ -66,7 +67,7 @@ export default function Albums() {
     return (
         <>
             {header}
-            <h1>Loading...</h1>
+            <Loading />
         </>
     );
 }

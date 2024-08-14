@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Tag } from "../config/site";
+import { Tag } from "../../config/site";
 
 export default function TagCard({ tag }: { tag: Tag }) {
     const bg = { backgroundColor: (tag.color != null ? `#${tag.color}` : "#ffffff") };

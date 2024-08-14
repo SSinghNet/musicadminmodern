@@ -78,26 +78,28 @@ export default function ArtistForm({ artist }: { artist: Artist }) {
     return (
         <>
             {header}
-            <div className="w-full justify-center text-center border-1 bg-white flex rounded-lg">
-                <div className="bg-slate-300 relative border-r-8 border-primary w-5/12">
-                    <div className={"aspect-square bg-black"}>
-                        <img src={art.image} alt={`${art.name} Cover`} className={"w-full h-full"} />
+            <div className="w-full border-1 bg-white flex rounded-lg">
+                <div className="grid md:flex justify-center text-center w-full">
+                    <div className="bg-slate-300 relative border-r-8 border-primary md:w-5/12">
+                        <div className={"aspect-square bg-black"}>
+                            <img src={art.image} alt={`${art.name} Cover`} className={"w-full h-full"} />
+                        </div>
+                        <div className="absolute bottom-0 bg-black bg-opacity-80 text-off-white w-full p-3">
+                            <a href={`https://music.ssingh.net/artist/${art.id}`} target="_blank">
+                                <h1 className={"text-xl font-semibold my-1"}>{art.name}</h1>
+                            </a>
+                            <br />
+                        </div>
                     </div>
-                    <div className="absolute bottom-0 bg-black bg-opacity-80 text-off-white w-full p-3">
-                        <a href={`https://music.ssingh.net/artist/${art.id}`} target="_blank">
-                            <h1 className={"text-xl font-semibold my-1"}>{art.name}</h1>
-                        </a>
-                        <br />
-                    </div>
-                </div>
-                <div className="grid grid-cols-2 w-7/12 p-7 gap-4">
-                    <div className="relative">
-                        <label htmlFor="name" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">name:</label>
-                        <textarea className="focus:ring-primary focus:border-primary bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={art.name} name="name" onChange={(e) => { setArt({ ...art, name: e.target.value }); }} />
-                    </div>
-                    <div className="relative">
-                        <label htmlFor="image" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">image:</label>
-                        <textarea className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={art.image} name="image" onChange={(e) => { setArt({ ...art, image: e.target.value }); }} />
+                    <div className="grid grid-cols-2 w-full md:w-7/12 p-7 gap-4">
+                        <div className="relative">
+                            <label htmlFor="name" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">name:</label>
+                            <textarea className="focus:ring-primary focus:border-primary bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={art.name} name="name" onChange={(e) => { setArt({ ...art, name: e.target.value }); }} />
+                        </div>
+                        <div className="relative">
+                            <label htmlFor="image" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">image:</label>
+                            <textarea className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={art.image} name="image" onChange={(e) => { setArt({ ...art, image: e.target.value }); }} />
+                        </div>
                     </div>
                 </div>
             </div>

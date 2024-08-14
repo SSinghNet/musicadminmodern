@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Artist } from "../../config/site";
 import ArtistForm from "../../components/artist/ArtistForm";
 import Header from "../../components/elements/Header";
+import Loading from "../../components/elements/Loading";
 
 export default function ArtistPage() {
     const [artists, setArtists] = useState<Artist[] | null>(null);
@@ -45,5 +46,5 @@ export default function ArtistPage() {
         }
         return (<>{header} Artist Not Found</>);
     }
-    return (<>{header}Loading...</>);
+    return (<>{header}<Loading /></>);
 }

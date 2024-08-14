@@ -3,6 +3,7 @@ import Header from "../../components/elements/Header";
 import { Tag } from "../../config/site";
 import TagList from "./list";
 import Button from "../../components/elements/Button";
+import Loading from "../../components/elements/Loading";
 
 const fetchTags = async () => {
     const res = await fetch("https://music.ssingh.net/tag?format=json&all=true");
@@ -61,7 +62,7 @@ export default function Tags() {
     return (
         <>
             {header}
-            <h1>Loading...</h1>
+            <Loading />
         </>
     );
 }
