@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AlbumCard from "../../components/AlbumCard";
+import AlbumCard from "../../components/album/AlbumCard";
 import { Album } from "../../config/site";
 import InfiniteScroll from 'react-infinite-scroller';
 

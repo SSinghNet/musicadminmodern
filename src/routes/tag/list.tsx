@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Tag } from "../../config/site";
 import InfiniteScroll from "react-infinite-scroller";
-import TagCard from "../../components/TagCard";
+import TagCard from "../../components/tag/TagCard";
 
 export default function TagList({ tags }: { tags: Tag[] }) {
     const [tagsList, setTagsList] = useState<JSX.Element[]>([]);

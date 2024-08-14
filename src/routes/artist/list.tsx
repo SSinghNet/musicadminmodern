@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Artist } from "../../config/site";
 import InfiniteScroll from "react-infinite-scroller";
-import ArtistCard from "../../components/ArtistCard";
+import ArtistCard from "../../components/artist/ArtistCard";
 
 export default function ArtistList({ artists, filterNoImage }: { artists: Artist[], filterNoImage:boolean }) {
     const [artistsList, setArtistsList] = useState<JSX.Element[]>([]);

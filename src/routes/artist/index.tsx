@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Header from "../../components/Header";
+import Header from "../../components/elements/Header";
 import { Artist } from "../../config/site";
 import ArtistList from "./list";
-import Button from "../../components/Button";
+import Button from "../../components/elements/Button";
 
 const fetchArtists = async () => {
     const res = await fetch("https://music.ssingh.net/artist?format=json&all=true");
@@ -34,6 +34,7 @@ export default function Artists() {
     useEffect(() => {
         if (artists == null) {
             localStorage.removeItem("artists");
+            initArtists();
         } else {
             localStorage.setItem("artists", JSON.stringify(artists));
         }
@@ -43,12 +44,12 @@ export default function Artists() {
         title="Artists"
         children={[
             <Button
-                onClick={() => { setFilterNoImage(!filterNoImage); setArtists(null); initArtists(); }}
+                onClick={() => { setFilterNoImage(!filterNoImage); setArtists(null); }}
                 type="secondary"
                 content={filterNoImage ? "Show All" : "Show Only \"No Image\""}
             />,
             <Button
-                onClick={() => { setArtists(null); initArtists(); }}
+                onClick={() => setArtists(null) }
                 type="secondary"
                 content="Refresh"
             />,

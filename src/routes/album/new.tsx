@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../../components/Header";
+import Header from "../../components/elements/Header";
 import { useState } from "react";
-import Button from "../../components/Button";
+import Button from "../../components/elements/Button";
 
 export default function AlbumNew() {
 

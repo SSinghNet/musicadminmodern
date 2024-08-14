@@ -2,8 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import { getArtists } from ".";
 import { useEffect, useState } from "react";
 import { Artist } from "../../config/site";
-import ArtistForm from "../../components/ArtistForm";
-import Header from "../../components/Header";
+import ArtistForm from "../../components/artist/ArtistForm";
+import Header from "../../components/elements/Header";
 
 export default function ArtistPage() {
     const [artists, setArtists] = useState<Artist[] | null>(null);

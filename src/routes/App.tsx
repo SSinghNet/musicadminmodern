@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/elements/Sidebar";
 import { useEffect, useState } from "react";
 
 export default function App() {

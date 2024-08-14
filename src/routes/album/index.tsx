@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Album } from '../../config/site';
-import Header from "../../components/Header";
+import Header from "../../components/elements/Header";
 
 import AlbumList from "./list";
-import Button from "../../components/Button";
+import Button from "../../components/elements/Button";
 
 const fetchAlbums = async () => {
     const res = await fetch("https://music.ssingh.net/album/?format=json&all=true");
@@ -33,6 +33,7 @@ export default function Albums() {
     useEffect(() => {
         if (albums == null) {
             localStorage.removeItem("albums");
+            initAlbums();
         } else {
             localStorage.setItem("albums", JSON.stringify(albums));
         }
@@ -42,7 +43,7 @@ export default function Albums() {
         title="Albums"
         children={[
             <Button
-                onClick={() => { setAlbums(null); initAlbums(); }}
+                onClick={() => setAlbums(null)}
                 content="Refresh"
                 type="secondary"
             />,

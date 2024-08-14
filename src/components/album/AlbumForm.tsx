@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Album, Artist, Tag } from "../config/site";
-import Header from "./Header";
+import { Album, Artist, Tag } from "../../config/site";
+import Header from "../elements/Header";
 import { useState } from "react";
-import Button from "./Button";
+import Button from "../elements/Button";
 
 export default function AlbumForm({ album }: { album: Album }) {
 

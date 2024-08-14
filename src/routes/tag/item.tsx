@@ -2,8 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import { getTags } from ".";
 import { useEffect, useState } from "react";
 import { Tag } from "../../config/site";
-import TagForm from "../../components/TagForm";
-import Header from "../../components/Header";
+import TagForm from "../../components/tag/TagForm";
+import Header from "../../components/elements/Header";
 
 export default function TagPage() {
     const [tags, setTags] = useState<Tag[] | null>(null);

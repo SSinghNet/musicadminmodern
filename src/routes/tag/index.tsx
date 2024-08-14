@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Header from "../../components/Header";
+import Header from "../../components/elements/Header";
 import { Tag } from "../../config/site";
 import TagList from "./list";
-import Button from "../../components/Button";
+import Button from "../../components/elements/Button";
 
 const fetchTags = async () => {
     const res = await fetch("https://music.ssingh.net/tag?format=json&all=true");
@@ -33,6 +33,7 @@ export default function Tags() {
     useEffect(() => {
         if (tags == null) {
             localStorage.removeItem("tags");
+            initTags();
         } else {
             localStorage.setItem("tags", JSON.stringify(tags));
         }
@@ -43,7 +44,7 @@ export default function Tags() {
         children={[
             <Button
                 type="secondary"
-                onClick={() => { setTags(null); initTags(); }}
+                onClick={() => setTags(null) }
                 content="Refresh"
             />
         ]} />;

@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Album, Artist } from "../config/site";
-import Header from "./Header";
+import { Album, Artist } from "../../config/site";
+import Header from "../elements/Header";
 import { useState } from "react";
-import AlbumCard from "./AlbumCard";
-import Button from "./Button";
+import AlbumCard from "../album/AlbumCard";
+import Button from "../elements/Button";
 
 export default function ArtistForm({ artist }: { artist: Artist }) {
     const [art, setArt] = useState(artist);

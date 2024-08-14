@@ -2,8 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import { getAlbums } from ".";
 import { useEffect, useState } from "react";
 import { Album } from "../../config/site";
-import AlbumForm from "../../components/AlbumForm";
-import Header from "../../components/Header";
+import AlbumForm from "../../components/album/AlbumForm";
+import Header from "../../components/elements/Header";
 
 export default function AlbumPage() {
     const [albums, setAlbums] = useState<Album[] | null>(null);
