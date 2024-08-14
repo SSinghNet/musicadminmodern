@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html, body {
+        font-family: "Inter";
+        font-optical-sizing: auto;
+        font-style: normal;
+        letter-spacing: 0.04em;
+        @apply text-black;
+        @apply bg-off-white;
+    }
+}
