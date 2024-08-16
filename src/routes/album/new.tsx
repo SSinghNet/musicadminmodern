@@ -87,48 +87,50 @@ export default function AlbumNew() {
     return (
         <>
             {header}
-            <div className="w-full justify-center text-center border-1 bg-white flex rounded-lg my-3">
-                <div className="bg-slate-300 relative border-r-8 border-primary w-5/12">
-                    <div className={"aspect-square bg-black"}>
-                        <img src={alb.image} alt={`${alb.name} Cover`} className={"w-full h-full"} />
+            <div className="w-full border-1 bg-white flex rounded-lg">
+                <div className="grid md:flex justify-center text-center w-full">
+                    <div className="bg-slate-300 relative border-r-8 border-primary md:w-5/12">
+                        <div className={"aspect-square bg-black"}>
+                            <img src={alb.image} alt={`${alb.name} Cover`} className={"w-full h-full"} />
+                        </div>
+                        <div className="absolute bottom-0 bg-black bg-opacity-80 text-off-white w-full p-3">
+                            <h1 className={"text-xl font-semibold my-1"}>{alb.name}</h1>
+                            <h1 className={"text-sm font-light my-1"}>{alb.artists}</h1>
+                            <h1 className={"text-xs font-light my-1"}>{alb.tags}</h1>
+                            <br />
+                            <h3 className={"text-xs my-1 font-extralight absolute bottom-3 right-3"}>{alb.score}%</h3>
+                            <h3 className={"text-xs my-1 font-extralight absolute bottom-3 left-3"}>{alb.releaseDate}</h3>
+                        </div>
                     </div>
-                    <div className="absolute bottom-0 bg-black bg-opacity-80 text-off-white w-full p-3">
-                        <h1 className={"text-xl font-semibold my-1"}>{alb.name}</h1>
-                        <h1 className={"text-sm font-light my-1"}>{alb.artists}</h1>
-                        <h1 className={"text-xs font-light my-1"}>{alb.tags}</h1>
-                        <br />
-                        <h3 className={"text-xs my-1 font-extralight absolute bottom-3 right-3"}>{alb.score}%</h3>
-                        <h3 className={"text-xs my-1 font-extralight absolute bottom-3 left-3"}>{alb.releaseDate}</h3>
-                    </div>
-                </div>
-                <div className="grid grid-cols-2 w-7/12 p-7 gap-4">
-                    <div className="relative">
-                        <label htmlFor="name" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">name:</label>
-                        <textarea className="focus:ring-primary focus:border-primary bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.name} name="name" onChange={(e) => { setAlb({ ...alb, name: e.target.value }); }} />
-                    </div>
-                    <div className="relative">
-                        <label htmlFor="image" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">image:</label>
-                        <textarea className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.image} name="image" onChange={(e) => { setAlb({ ...alb, image: e.target.value }); }} />
-                    </div>
-                    <div className="relative">
-                        <label htmlFor="artists" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">artists:</label>
-                        <textarea className="focus:ring-primary focus:border-primary bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.artists} name="artists" onChange={(e) => { setAlb({ ...alb, artists: e.target.value }); }} />
-                    </div>
-                    <div className="relative">
-                        <label htmlFor="tags" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">tags:</label>
-                        <textarea className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.tags} name="tags" onChange={(e) => { setAlb({ ...alb, tags: e.target.value }); }} />
-                    </div>
-                    <div className="relative">
-                        <label htmlFor="releaseDate" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">Release Date: </label>
-                        <input type="date" className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.releaseDate} name="releaseDate" onChange={(e) => { setAlb({ ...alb, releaseDate: e.target.value }); }} />
-                    </div>
-                    <div className="relative">
-                        <label htmlFor="score" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">Score: </label>
-                        <input type="number" className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.score} name="score" onChange={(e) => { setAlb({ ...alb, score: parseInt(e.target.value) }); }} />
-                    </div >
-                    <div className="relative col-span-2">
-                        <label htmlFor="review" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">Review: </label>
-                        <textarea rows={6} className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" value={alb.review} name="review" onChange={(e) => { setAlb({ ...alb, review: e.target.value }); }} />
+                    <div className="grid grid-cols-2 md:w-7/12 p-7 gap-4">
+                        <div className="relative">
+                            <label htmlFor="name" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">name:</label>
+                            <textarea className="focus:ring-primary focus:border-primary bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.name} name="name" onChange={(e) => { setAlb({ ...alb, name: e.target.value }); }} />
+                        </div>
+                        <div className="relative">
+                            <label htmlFor="image" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">image:</label>
+                            <textarea className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.image} name="image" onChange={(e) => { setAlb({ ...alb, image: e.target.value }); }} />
+                        </div>
+                        <div className="relative">
+                            <label htmlFor="artists" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">artists:</label>
+                            <textarea className="focus:ring-primary focus:border-primary bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.artists} name="artists" onChange={(e) => { setAlb({ ...alb, artists: e.target.value }); }} />
+                        </div>
+                        <div className="relative">
+                            <label htmlFor="tags" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">tags:</label>
+                            <textarea className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.tags} name="tags" onChange={(e) => { setAlb({ ...alb, tags: e.target.value }); }} />
+                        </div>
+                        <div className="relative">
+                            <label htmlFor="releaseDate" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">Release Date: </label>
+                            <input type="date" className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.releaseDate} name="releaseDate" onChange={(e) => { setAlb({ ...alb, releaseDate: e.target.value }); }} />
+                        </div>
+                        <div className="relative">
+                            <label htmlFor="score" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">Score: </label>
+                            <input type="number" className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" required value={alb.score} name="score" onChange={(e) => { setAlb({ ...alb, score: parseInt(e.target.value) }); }} />
+                        </div >
+                        <div className="relative col-span-2">
+                            <label htmlFor="review" className="absolute z-10 top-2 left-2 lowercase text-black text-opacity-50 text-xs">Review: </label>
+                            <textarea rows={6} className="bg-off-white p-2 pt-7 px-3 rounded-md drop-shadow-sm resize-none w-full" value={alb.review} name="review" onChange={(e) => { setAlb({ ...alb, review: e.target.value }); }} />
+                        </div>
                     </div>
                 </div>
             </div>
